@@ -1,0 +1,185 @@
+/* components/auth/Register.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+.register-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Slightly wider than login for more form fields */
+  min-height: 700px; /* Taller for the additional form fields */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto; /* Allow scrolling if needed */
+}
+
+.register-form {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+  text-align: left;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.dark-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.dark-input:focus {
+  outline: none;
+  border-color: #F8A34A;
+  box-shadow: 0 0 0 2px rgba(248, 163, 74, 0.2);
+}
+
+.dark-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.dark-select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='6' fill='none'%3E%3Cpath fill='rgba(255, 255, 255, 0.5)' d='M6 6 0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  cursor: pointer;
+}
+
+.dark-select:focus {
+  outline: none;
+  border-color: #F8A34A;
+  box-shadow: 0 0 0 2px rgba(248, 163, 74, 0.2);
+}
+
+.dark-select option {
+  background-color: #2E2C34;
+  color: white;
+}
+
+.form-hint {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.375rem;
+}
+
+.error-alert {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  margin-bottom: 1.5rem;
+  background-color: rgba(226, 74, 74, 0.1);
+  border: 1px solid rgba(226, 74, 74, 0.3);
+  border-radius: 12px;
+  color: #FF6B6B;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.success-alert {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  margin-bottom: 1.5rem;
+  background-color: rgba(80, 200, 120, 0.1);
+  border: 1px solid rgba(80, 200, 120, 0.3);
+  border-radius: 12px;
+  color: #60E190;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+/* Spinner animation for loading state */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+}
+
+.login-link {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.login-link a {
+  color: #F8A34A;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.login-link a:hover {
+  color: #ffc285;
+  text-decoration: underline;
+}
+
+/* Animation for form transition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-form {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.barber-logo {
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-height: 800px) {
+  .register-card {
+    padding: 1.5rem;
+    min-height: 600px;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .dark-input, .dark-select {
+    padding: 0.75rem;
+  }
+  
+  .barber-logo {
+    margin-bottom: 1rem;
+  }
+}
